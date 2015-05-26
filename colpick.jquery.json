@@ -19,6 +19,6 @@
 	"bugs": "https://github.com/mrgrain/colpick/issues",
 	"homepage": "https://github.com/mrgrain/colpick",
 	"docs": "https://github.com/mrgrain/colpick",
-	"download": "https://github.com/mrgrain/colpick/archive/2.0.2.zip",
+	"download": "https://github.com/mrgrain/colpick/archive/3.0.0.zip",
 	"dependencies": {"jquery": ">=1.7.0"}
 }
