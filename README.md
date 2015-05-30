@@ -1,5 +1,4 @@
-colpick Color Picker
-====================
+# colpick - A jQuery Color Picker
 
 colpick is a simple Photoshop-style color picker jQuery plugin. Its interface is familiar for most users and it's also very lightweight loading less than 30 KB to the browser.
 
@@ -7,15 +6,34 @@ colpick is a simple Photoshop-style color picker jQuery plugin. Its interface is
 * **No images!** Just a JS and a CSS file
 * Very intuitive Photoshop-like interface
 * Light and dark easy-to-customize CSS3 skins
-* **28 KB total** loaded by the browser
+* Only **29 KB total**, even less if minified and gziped
 * Works and looks nice **even on IE7**
 * Extremely easy to implement
 
-##Usage##
-Incude colpick.js and colpick.css to the head of your document. Make sure you have included jQuery (v1.7.0+) as well.
+## Installation
+Add **colpick** to your project using your the tool of you choice or download the files.
+
+### Bower
+```bash
+bower install jquery-colpick --save
 ```
+
+### npm
+```bash
+npm install jquery-colpick --save
+```
+
+## Usage
+Include `colpick.js` and `colpick.css` to into your application. Make sure you have included jQuery (v1.7.0+) as well.
+```html
 <script src="js/colpick.js" type="text/javascript"></script>
 <link rel="stylesheet" href="css/colpick.css" type="text/css"/>
+```
+
+### Browserify/Node
+Require the module in your application. Don't forget to include the css file as well.
+```js
+require('jquery-colpick');
 ```
 
 Now you may call the colpick method on any jQuery object to create a color picker. By default you get a dropdown color picker.
@@ -72,6 +90,20 @@ For more examples see [Usage examples](example/index.html).
     <tr>
       <td>polyfill</td><td>boolean or function</td>
       <td>If true, the color picker is only activated when no native browser behavior is available. Use a function (should receive a colorpicker DOM object) to determine the option dynamically (e.g. by user-agent). Default: false</td>
+    </tr>
+    <tr>
+      <td>appendTo</td><td>DOM element</td>
+      <td>
+        Append the picker to the specified DOM element.<br>
+        Defaults:
+        <ul>
+          <li>flat: true -> this (the element itself)</li>
+          <li>flat: false -> document.body</li>
+      </td>
+    </tr>
+    <tr>
+      <td>style</td><td>object</td>
+      <td>Set additional styles to the picker. Will accept any object that could be passed to <a href="http://api.jquery.com/css/#css-properties">jQuery's .css method</a>. Default: null</td>
     </tr>
     <tr>
       <td>onBeforeShow</td><td>function</td>
@@ -204,11 +236,14 @@ For more examples see [Usage examples](example/index.html).
 ##Changes to josedvq's version##
 * **Polyfill:** New option 'polyfill' to work with native color input fields
 * **Auto color:** Get the default color from an element's 'value' attribute using jQuery function .val()
-* **UMD compatibility:** Uses an UMD style closure to be loadable with AMD loaders (require.js) or CommonJS 
-* **Fixed Issues:** [#16](https://github.com/josedvq/colpick-jQuery-Color-Picker/issues/16), [#17](https://github.com/josedvq/colpick-jQuery-Color-Picker/issues/17)
+* **Custom parent:**  New option 'appendTo' to specify which element to append the picker to ([PR #44](https://github.com/josedvq/colpick-jQuery-Color-Picker/pull/44))
+* **CSS styles:** New option 'styles' to specify additional styles to be set on the picker ([PR #44](https://github.com/josedvq/colpick-jQuery-Color-Picker/pull/44))
+* **UMD compatibility:** Uses an UMD style closure to be loadable with AMD loaders (require.js) or CommonJS
+* **3 character hex support:** Added support for entering three character hex codes as specificied in the CSS 2.1 spec ([PR #43](https://github.com/josedvq/colpick-jQuery-Color-Picker/pull/43))
+* **Fixed Issues:** [#16](https://github.com/josedvq/colpick-jQuery-Color-Picker/issues/16), [#17](https://github.com/josedvq/colpick-jQuery-Color-Picker/issues/17), [PR#58](https://github.com/josedvq/colpick-jQuery-Color-Picker/pull/48)
 
 
-Dual licensed under the MIT and GPL licenses.
+Dual licensed under the MIT and GPLv2 licenses.
 
 Fork of josedvq's [colpick](https://github.com/josedvq/colpick-jQuery-Color-Picker)  
 Based on Stefan Petre's [color picker](http://www.eyecon.ro/colorpicker/)
