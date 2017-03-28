@@ -490,6 +490,7 @@
             },
             destroy: function () {
                 $('#' + $(this).data('colpickId')).remove();
+                $(this).off(defaults.showEvent);
             }
         };
     }();
