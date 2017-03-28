@@ -167,6 +167,10 @@ For more examples see [Usage examples](example/index.html).
         </ul>
       </td>
     </tr>
+    <tr>
+      <td>colpickDestroy()</td>
+      <td>remove the color picker. Accepts no arguments. Use it to remove the picker with an external trigger.</td>
+    </tr>
   </tbody>
 </table>
     
